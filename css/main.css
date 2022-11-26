@@ -1,0 +1,323 @@
+/* reset all of the default to 0 so that you can create your own css */
+/*donnot rely on built-in browser default */
+
+* {
+    border: none;
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+} 
+
+header {
+    background-color: red;
+    width: 100%;
+    height: 100px;
+    display: block;
+}
+
+header h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    padding-top: 10px;
+    font-family: sans-serif ;
+    color: yellow;
+}
+
+body {
+    background-image: url(../img/background_images.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+main {
+    display: box;
+}
+
+article{
+    width: 25%;
+    border: thin solid white;
+    border-radius: 8px;
+
+    display: inline-block;
+    margin: 1px auto;
+
+    text-align: left;
+}
+
+
+.wrapper {
+    background: #ffc3a0;
+    max-width: 405px;
+    margin-top: 50px;
+    margin-left: 95px;
+    border-radius: 7px;
+    padding: 15px 0;
+}
+
+
+
+.task-input {
+    height: 30px;
+    padding: 0 25px;
+    position: relative;
+}
+
+.task-input img {
+    position: absolute;
+    top: 50%;
+    transform: translate(17px, -50%);
+}
+
+.task-input input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid #999;
+    padding: 0 20px 0 10px;
+}
+
+.task-input input::placeholder {
+    color: #bfbfbf;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 25px;
+    border-bottom: 1px solid #ccc;
+}
+
+.filters span {
+    cursor: pointer;
+    margin: 0 8px;
+    font-size: 17px;
+    font-family: sans-serif;
+}
+
+.filters span:first-child{
+    margin-left: 0;
+    
+}
+
+.filters span{
+    font-size: 25px;
+    
+}
+
+.controls .clear-all {
+    outline: none;
+    border: none;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    font-size: 13px;
+    font-family: sans-serif;
+    padding: 7px 13px;
+    background: black;
+}
+
+.task-box{
+    margin: 20px 25px;
+    font-family: sans-serif;
+}
+
+.task-box .task{
+    list-style: none;
+    font-size: 17px;
+    margin-bottom: 18px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #ccc;  
+}
+
+.task-box .task:last-child{
+    margin-bottom: 0;
+    border-bottom: 0;
+    padding-bottom: 0;
+    
+}
+
+.task label{
+    display: flex;
+}
+
+.task label input{
+    margin-top: 6px;
+    margin-right: 12px;
+}
+
+#checkbox {
+    cursor: pointer;
+}
+
+
+input[type="checkbox"] { margin-right: 8px;}
+
+input[type="checkbox"]:checked + span::after{
+    content: '\1F44D';
+    width: 25px ;
+    height: 1px;
+    padding: -1px; 
+    border-radius: 70%;
+    background-color: lightblue;
+    border: 3px solid darkblue;
+    position: relative;
+    top: 0px;
+    right: -50px;
+    font-size: 1.5em;
+  
+    animation: fadeIn 0.7s;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0;}
+    to{ opacity: 1;}
+  }
+ 
+
+/*
+.hidden {
+    display: none;
+}
+
+html, body { height: 100% }
+
+#header {
+    background-color: #550065;
+    width: 100%;
+    height: 80px;
+    display: block;
+}
+
+.logo_name {
+    width: 1000px;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+    background-color: white;
+}
+
+
+header {
+    height: 100%;
+    display: table;
+    float: left;
+    
+}
+
+header h2 {
+    color: purple;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 10px;
+}
+
+
+.logo {
+    width: 60px;
+    padding: 10px 0px 5px 5px;
+    display: flex;
+} 
+
+body {
+    font-size: 16px;
+    background-color: rgb(68, 10, 10);
+    background-image: url(../img/background_images.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    background-position: center;
+    background-blend-mode: overlay;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: white;
+}
+
+
+
+body header h1 {
+    margin-top: 0px;
+    position: inherit;
+}
+
+
+header > h2 {
+    text-align: center;
+    padding: 8px;
+}
+
+article:first-of-type {border: 3px solid gray;}
+
+article{
+    width: 25%;
+    border: thin solid white;
+    border-radius:  8px;
+
+    display: inline-block;
+    margin: 10px 12px;
+
+    text-align: left;
+}
+
+main { text-align: center;}
+
+article > h2 {
+    color: gray;
+    padding: 4px 8px;
+}
+
+input[type="checkbox"] {
+    text-decoration: line-through;
+}
+
+#inprogress {
+    border: 3px solid white;
+}
+#inprogress h2 {
+    color: white;
+}
+
+#done {
+    border: 3px solid rgb(58, 196, 58);
+}
+#done h2 {
+    color: rgb(49, 240, 49);
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    padding: 4px 8px; 
+}
+
+.todo li:nth-child(odd) {background-color: rgba(255, 255 , 255, 0.2);}
+
+.inprogress li:nth-child(odd) {background-color: rgba(18, 151, 85, 0.2);}
+
+.done li:nth-child(odd) {background-color: rgba(100, 108, 224, 0.2);}
+
+
+
+footer{
+    color: rgb(248, 180, 180);
+    padding: 20px 0;
+    text-align: center;
+}
+
+.sticky_footer {
+    position: sticky;
+    top: 100%;
+
+    height: 80px;
+    background-color: rgb(40, 37, 37);
+}
+
